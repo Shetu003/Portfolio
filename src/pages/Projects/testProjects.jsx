@@ -27,21 +27,21 @@ const projects = [
     title: "Smart Email Assistant",
     description:
       "Smart Email Assistant is a Chrome extension integrated with Gmail that helps users reply to emails in their desired tone, such as professional, friendly, or casual. This extension uses AI to craft replies, making email communication faster and more contextually appropriate.",
-    src: "/images/reply.png", // Add your image here in the public/images folder
+    src: "/images/reply.png",
     link: "",
     color: "#ff8a00",
     githubLink: "https://github.com/Shetu003/Smart-Email-Assistant",
-    liveLink: "", // Live link removed
+    liveLink: "", // No live link
   },
   {
     title: "ChargeX: EV Charging Station Finder",
     description:
       "ChargeX is an app that helps users find nearby EV charging stations in real-time, helping electric vehicle owners locate convenient charging spots. The app offers a user-friendly interface with map integration and station availability updates.",
-    src: "/images/ev.jpg", // Add your image here in the public/images folder
+    src: "/images/ev.jpg",
     link: "",
     color: "#4caf50",
     githubLink: "https://github.com/Shetu003/Smart-Charging-For-EVs",
-    liveLink: "", // Live link removed
+    liveLink: "", // No live link
   }
 ];
 
@@ -67,7 +67,7 @@ export default function Projects1() {
                 color={project.color}
                 description={project.description}
                 githubLink={project.githubLink}
-                liveLink={project.liveLink} // Removed live link for the projects without a live demo
+                liveLink={project.liveLink} // Handle projects with or without live link
                 progress={scrollYProgress}
                 range={[i * 0.25, 1]}
                 targetScale={targetScale}
@@ -118,7 +118,7 @@ function Card({
         <div className="w-full flex flex-col md:flex-row bg-zinc-900 rounded-2xl overflow-hidden shadow-xl">
           <div className="w-full md:w-[55%] h-[250px] md:h-[400px] lg:h-[450px] relative overflow-hidden">
             <motion.img
-              src={src} // <-- Correct now
+              src={src}
               alt={title}
               className="w-full h-full object-cover"
               initial={{ scale: 1 }}
@@ -175,7 +175,28 @@ function Card({
                   </span>
                 </motion.a>
 
-                {/* Removed Live button for ChargeX */}
+                {/* Conditionally Render Live Button */}
+                {liveLink ? (
+                  <motion.a
+                    href={liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-2"
+                    whileHover={{ y: -3 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                  >
+                    <span
+                      className="text-xs md:text-sm font-medium"
+                      style={{ color }}
+                    >
+                      Live
+                    </span>
+                  </motion.a>
+                ) : (
+                  <span className="text-xs md:text-sm font-medium text-gray-500">
+                    No Live Demo
+                  </span>
+                )}
               </div>
             </div>
           </div>
