@@ -16,7 +16,7 @@ const EducationSection = () => {
   const educationData = [
     {
       degree: "Bachelor of Engineering in Information Science and Engineering",
-      school: "Nitte Meenakshi Institute of Technology",
+      school: "Nitte Meenakshi Institute of Technology, Bengaluru",
       mascot: "📘",
       year: "2022 - 2026",
       achievements: [],
