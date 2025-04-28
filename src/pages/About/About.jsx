@@ -22,7 +22,7 @@ export default function About() {
 
             <div className="relative space-y-4">
               <p className="text-white">
-                Hi, I’m Shetu.
+                Hi, I’m Shetu Srivastav.
               </p>
               <p>
                 I am an aspiring Software Engineer & Developer with a deep passion for coding and problem-solving. I enjoy building something new every day—whether it's an innovative project, a handy tool, or a creative solution to a challenge. Beyond writing code, I bring curiosity, adaptability, and a strong work ethic, allowing me to contribute effectively to teams and projects. I'm always eager to take on new challenges, refine my skills, and explore fresh ideas.
