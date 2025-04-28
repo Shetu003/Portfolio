@@ -35,7 +35,7 @@ const EducationSection = () => {
         "",
     },
     {
-      degree: "Central Board of Secondary Education - ICSE",
+      degree: "Central Board of Secondary Education - CBSE",
       school: "Shivam School, Bihar",
       mascot: "📘",
       year: "2020",
