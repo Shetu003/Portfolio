@@ -25,7 +25,7 @@ const EducationSection = () => {
         "",
     },
     {
-      degree: "Senior School Certificate - CBSE",
+      degree: "Senior School - CBSE",
       school: "St. Thomas High School, Jharkhand",
       mascot: "📗",
       year: "2022",
@@ -35,7 +35,7 @@ const EducationSection = () => {
         "",
     },
     {
-      degree: "Central Board of Secondary Education - CBSE",
+      degree: "Secondary School - CBSE",
       school: "Shivam School, Bihar",
       mascot: "📘",
       year: "2020",
