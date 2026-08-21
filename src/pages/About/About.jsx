@@ -11,7 +11,7 @@ export default function About() {
               <div className="bg-linear-to-b aspect-76/59 relative rounded-2xl p-px from-zinc-300 to-transparent">
                 {/* Updated image source path */}
                 <img
-                  src="/images/hero.jpg" // Path relative to the public folder
+                  src="/images/hero.jpeg" // Path relative to the public folder
                   className="rounded-[15px] shadow block"
                   alt="payments illustration"
                   width={1207}
@@ -21,16 +21,29 @@ export default function About() {
             </div>
 
             <div className="relative space-y-4">
-              <p className="text-white">
-                Hi, I’m Shetu.
-              </p>
+              <p className="text-white"> Hi, I’m Shetu. </p>{" "}
               <p>
-                I am an aspiring Software Engineer & Developer with a deep passion for coding and problem-solving. I enjoy building something new every day—whether it's an innovative project, a handy tool, or a creative solution to a challenge. Beyond writing code, I bring curiosity, adaptability, and a strong work ethic, allowing me to contribute effectively to teams and projects. I'm always eager to take on new challenges, refine my skills, and explore fresh ideas.
-              </p>
+                {" "}
+                I’m a Software Engineer and IT Developer with experience
+                building enterprise applications, backend services, and
+                AI-driven solutions. I enjoy turning complex problems into
+                scalable, practical, and user-focused software.{" "}
+              </p>{" "}
               <p>
-                Thank you for visiting my portfolio and taking the time to explore my work!
+                {" "}
+                My experience spans Java, Spring Boot, REST APIs, SQL,
+                Salesforce development with Apex and LWC, and cloud-based
+                enterprise platforms. I’ve also worked on AI/ML projects
+                involving semantic search, knowledge graphs, RAG, and
+                intelligent applications, and I’m currently exploring agentic AI
+                and LLM-powered systems.{" "}
+              </p>{" "}
+              
+              <p>
+                {" "}
+                Thanks for visiting my portfolio — feel free to explore my
+                projects and experience.{" "}
               </p>
-
               <div className="pt-6">
                 <blockquote className="border-l-4 border-gray-300 pl-4">
                   <div className="mt-6 space-y-3">

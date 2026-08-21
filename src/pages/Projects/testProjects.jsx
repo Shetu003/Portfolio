@@ -4,49 +4,79 @@ import { useRef, useState } from "react";
 
 const projects = [
   {
+    title: "HPE CRMA + Agentforce Integration PoC",
+    description:
+      "An enterprise PoC developed during my work with the SFDC team at Hewlett Packard Enterprise, integrating CRM Analytics (CRMA) with Agentforce to explore AI-powered insights and intelligent enterprise workflows. Worked across Salesforce technologies and AI-driven capabilities to demonstrate an end-to-end solution.",
+    src: "/images/Salesforce.jpg",
+    link: "",
+    color: "#00A1E0",
+    githubLink: "",
+    liveLink: "",
+  },
+
+  {
+    title: "SmartDesk: AI-Powered Productivity Platform",
+    description:
+      "SmartDesk is an AI-powered productivity platform combining task management, focus tools, mood journaling, and an AI chatbot. Built with Spring Boot, Kafka, H2, HTML, CSS, JavaScript, and Gemini API, demonstrating backend development, event-driven architecture, and AI integration.",
+    src: "/images/smartdesk.png",
+    link: "",
+    color: "#8f89ff",
+    githubLink: "https://github.com/Shetu003/SmartDesk",
+    liveLink: "https://smartdesk-yl1x.onrender.com/",
+  },
+
+  {
     title: "Chit-Chat: A Real Time Chat Application",
     description:
-      "Chit-Chat is a real-time messaging application that enables users to send and receive messages instantly. It features user authentication, dynamic chat rooms, and seamless communication powered by WebSocket technology.",
+      "Chit-Chat is a real-time messaging application that enables users to send and receive messages instantly. It features user authentication, dynamic chat rooms, REST APIs, and seamless real-time communication powered by WebSocket technology.",
     src: "/images/chit-chat-image.jpg",
     link: "",
     color: "#5196fd",
-    githubLink: "https://github.com/Shetu003/Chit-Chat-Real-Time-Chat-App",
+    githubLink:
+      "https://github.com/Shetu003/Chit-Chat-Real-Time-Chat-App",
     liveLink: "https://realtimechat-l5pk.onrender.com",
   },
+
   {
-    title: "MedEase: A healthcare Recommendation System",
+    title: "MedEase: AI Healthcare Recommendation System",
     description:
-      "MedEase is an AI-powered healthcare recommendation system that suggests medicines, workouts, predicted diseases, and diets based on user-provided symptoms. It leverages intelligent algorithms to offer personalized healthcare solutions.",
+      "MedEase is an AI-powered healthcare recommendation system that predicts potential diseases and provides personalized recommendations based on user-provided symptoms. The project uses machine learning to support disease prediction and intelligent health recommendations.",
     src: "/images/med-ease-image.jpg",
     link: "",
     color: "#8f89ff",
-    githubLink: "https://github.com/Shetu003/Medical-Recommendation-System",
-    liveLink: "https://medical-recommendation-system-jhgmgawyblncafmwjz5g99.streamlit.app/",
+    githubLink:
+      "https://github.com/Shetu003/Medical-Recommendation-System",
+    liveLink:
+      "https://medical-recommendation-system-jhgmgawyblncafmwjz5g99.streamlit.app/",
   },
+
   {
-    title: "Smart Email Assistant",
+    title: "Eco-Footprint Advisor",
     description:
-      "Smart Email Assistant is a Chrome extension integrated with Gmail that helps users reply to emails in their desired tone, such as professional, friendly, or casual. This extension uses AI to craft replies, making email communication faster and more contextually appropriate.",
-    src: "/images/reply.png", // Add your image here in the public/images folder
+      "Eco-Footprint Advisor is a machine learning application that estimates an individual's carbon footprint based on lifestyle and consumption patterns. It uses a Random Forest regression model with a Flask-based application to provide personalized environmental insights.",
+    src: "/images/eco.png",
     link: "",
-    color: "#ff8a00",
-    githubLink: "https://github.com/Shetu003/Smart-Email-Assistant",
-    liveLink: "", // Live link removed
+    color: "#4caf50",
+    githubLink: "https://github.com/Shetu003/Eco-Footprint-App-",
+    liveLink: "https://eco-footprint-app.onrender.com",
   },
+
+
   {
     title: "ChargeX: EV Charging Station Finder",
     description:
-      "ChargeX is an app that helps users find nearby EV charging stations in real-time, helping electric vehicle owners locate convenient charging spots. The app offers a user-friendly interface with map integration and station availability updates.",
-    src: "/images/ev.jpg", // Add your image here in the public/images folder
+      "ChargeX is an EV charging station finder that helps users locate nearby charging stations through an interactive map interface. It uses map integration to provide a convenient way for electric vehicle owners to discover charging locations.",
+    src: "/images/ev.jpg",
     link: "",
     color: "#4caf50",
     githubLink: "https://github.com/Shetu003/Smart-Charging-For-EVs",
-    liveLink: "", // Live link removed
-  }
+    liveLink: "",
+  },
 ];
 
 export default function Projects1() {
   const container = useRef(null);
+
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start start", "end end"],
@@ -58,6 +88,7 @@ export default function Projects1() {
         <section className="text-white w-full bg-slate-950">
           {projects.map((project, i) => {
             const targetScale = 1 - (projects.length - i) * 0.05;
+
             return (
               <Card
                 key={`p_${i}`}
@@ -67,7 +98,7 @@ export default function Projects1() {
                 color={project.color}
                 description={project.description}
                 githubLink={project.githubLink}
-                liveLink={project.liveLink} // Removed live link for the projects without a live demo
+                liveLink={project.liveLink}
                 progress={scrollYProgress}
                 range={[i * 0.25, 1]}
                 targetScale={targetScale}
@@ -116,66 +147,113 @@ function Card({
         onHoverEnd={() => setIsHovered(false)}
       >
         <div className="w-full flex flex-col md:flex-row bg-zinc-900 rounded-2xl overflow-hidden shadow-xl">
+
+          {/* Project Image */}
           <div className="w-full md:w-[55%] h-[250px] md:h-[400px] lg:h-[450px] relative overflow-hidden">
             <motion.img
-              src={src} // <-- Correct now
+              src={src}
               alt={title}
               className="w-full h-full object-cover"
               initial={{ scale: 1 }}
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.4 }}
             />
+
             <motion.div
               className="absolute inset-0"
-              style={{ backgroundColor: color, mixBlendMode: "overlay" }}
+              style={{
+                backgroundColor: color,
+                mixBlendMode: "overlay",
+              }}
               initial={{ opacity: 0 }}
               whileHover={{ opacity: 0.3 }}
               transition={{ duration: 0.3 }}
             />
+
             <div className="absolute top-4 left-4 md:top-6 md:left-6 bg-black/50 backdrop-blur-md text-white px-3 py-1 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium">
               Project {i + 1}
             </div>
           </div>
 
+          {/* Project Content */}
           <div className="w-full md:w-[45%] p-6 md:p-8 lg:p-10 flex flex-col justify-between">
+
             <div>
               <div className="flex items-center gap-3 mb-4 md:mb-6">
                 <div
                   className="w-2 h-2 md:w-3 md:h-3 rounded-full"
                   style={{ backgroundColor: color }}
                 />
+
                 <div className="h-[1px] w-12 md:w-20 bg-gray-600" />
               </div>
 
               <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-2 md:mb-4">
                 {title}
               </h2>
-              <p className="text-sm md:text-base text-gray-400 leading-relaxed line-clamp-3 md:line-clamp-none max-w-md">
+
+              <p className="text-sm md:text-base text-gray-400 leading-relaxed line-clamp-4 md:line-clamp-none max-w-md">
                 {description}
               </p>
             </div>
 
+            {/* Project Links */}
             <div className="mt-4 md:mt-auto pt-4">
               <div className="w-full h-[1px] bg-gray-800 mb-4 md:mb-6" />
 
-              <div className="flex items-center gap-4">
-                <motion.a
-                  href={githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-2"
-                  whileHover={{ y: -3 }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
-                  <span
-                    className="text-xs md:text-sm font-medium"
-                    style={{ color }}
-                  >
-                    Code
-                  </span>
-                </motion.a>
+              <div className="flex items-center gap-5">
 
-                {/* Removed Live button for ChargeX */}
+                {/* GitHub / Code */}
+                {githubLink ? (
+                  <motion.a
+                    href={githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-2"
+                    whileHover={{ y: -3 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 400,
+                    }}
+                  >
+                    <span
+                      className="text-xs md:text-sm font-medium"
+                      style={{ color }}
+                    >
+                      Code
+                    </span>
+                  </motion.a>
+                ) : (
+                  <span className="text-xs md:text-sm font-medium text-gray-500">
+                    Internal Project
+                  </span>
+                )}
+
+                {/* Live Demo */}
+                {liveLink ? (
+                  <motion.a
+                    href={liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-2"
+                    whileHover={{ y: -3 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 400,
+                    }}
+                  >
+                    <span
+                      className="text-xs md:text-sm font-medium"
+                      style={{ color }}
+                    >
+                      Live
+                    </span>
+                  </motion.a>
+                ) : (
+                  <span className="text-xs md:text-sm font-medium text-gray-500">
+                    No Live Demo
+                  </span>
+                )}
               </div>
             </div>
           </div>

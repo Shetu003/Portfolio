@@ -1,13 +1,12 @@
+
 import React, { useState } from "react";
-import EducationLoader from "@/components/ui/EducationLoader";
+
 import {
-  Star,
-  Award,
   Calendar,
   BookOpen,
   GraduationCap,
-  Trophy,
 } from "lucide-react";
+
 import { motion } from "framer-motion";
 
 const EducationSection = () => {
@@ -15,35 +14,30 @@ const EducationSection = () => {
 
   const educationData = [
     {
-      degree: "Bachelor of Engineering in Information Science and Engineering",
-      school: "Nitte Meenakshi Institute of Technology",
+      degree:
+        "B.E in Information Science and Engineering",
+      school: "Nitte Meenakshi Institute of Technology, Bengaluru",
       mascot: "📘",
       year: "2022 - 2026",
-      achievements: [],
-      skills: [],
-      description:
-        "",
+      grade: "9.39 CGPA",
+      description: "",
     },
     {
-      degree: "Senior School Certificate - CBSE",
+      degree: "Senior Secondary School Certificate - CBSE",
       school: "St. Thomas High School, Jharkhand",
       mascot: "📗",
       year: "2022",
-      achievements: [],
-      skills: [],
-      description:
-        "",
+      grade: "88.4%",
+      description: "",
     },
     {
-      degree: "Central Board of Secondary Education - ICSE",
+      degree: "Secondary School Certificate - CBSE",
       school: "Shivam School, Bihar",
       mascot: "📘",
       year: "2020",
-      achievements: [],
-      skills: [],
-      description:
-        "",
-    }
+      grade: "90.4%",
+      description: "",
+    },
   ];
 
   const containerVariants = {
@@ -57,7 +51,10 @@ const EducationSection = () => {
   };
 
   const cardVariants = {
-    hidden: { y: 50, opacity: 0 },
+    hidden: {
+      y: 50,
+      opacity: 0,
+    },
     visible: {
       y: 0,
       opacity: 1,
@@ -73,11 +70,14 @@ const EducationSection = () => {
       {/* Grid Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-grid-white/[0.05] bg-[length:50px_50px]" />
+
         <div className="absolute inset-0 bg-gradient-to-t from-[#04081A] via-transparent to-[#04081A]" />
+
         <div className="absolute inset-0 border border-white/[0.05] grid grid-cols-2 md:grid-cols-4" />
       </div>
 
       <div className="max-w-6xl mx-auto px-4 relative z-10">
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -87,11 +87,14 @@ const EducationSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent mb-6">
             Education
           </h2>
+
           <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-            Take a look at my academic background, including the institutions I’ve attended and the degrees I’ve completed.
+            Take a look at my academic background, including the institutions
+            I’ve attended and the degrees I’ve completed.
           </p>
         </motion.div>
 
+        {/* Education Cards */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -111,55 +114,45 @@ const EducationSection = () => {
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <div className="space-y-6">
-                <div className="space-y-2">
+                <div className="space-y-3">
+                  {/* Degree */}
                   <div className="flex items-center gap-3">
-                    <span className="text-3xl">{edu.mascot}</span>
+                    <span className="text-3xl">
+                      {edu.mascot}
+                    </span>
+
                     <h3 className="text-2xl font-bold text-white">
                       {edu.degree}
                     </h3>
                   </div>
+
+                  {/* School */}
                   <p className="text-lg text-gray-300 flex items-center gap-2">
                     <BookOpen className="w-5 h-5 text-teal-500" />
                     {edu.school}
                   </p>
+
+                  {/* Year */}
                   <p className="text-gray-400 flex items-center gap-2">
                     <Calendar className="w-4 h-4" />
                     {edu.year}
                   </p>
+
+                  {/* Grade */}
+                  <p className="text-gray-300 flex items-center gap-2">
+                    <GraduationCap className="w-4 h-4 text-teal-400" />
+                    <span className="font-medium text-white">
+                      {edu.grade}
+                    </span>
+                  </p>
                 </div>
 
-                <p className="text-gray-300 text-sm italic border-l-2 border-teal-500 pl-3">
-                  {edu.description}
-                </p>
-
-                {/* <div className="space-y-3">
-                  <h4 className="text-sm font-semibold text-white flex items-center gap-2">
-                    <Trophy className="w-4 h-4 text-yellow-500" />
-                    Key Achievements
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {edu.achievements.map((achievement, i) => (
-                      <div
-                        key={i}
-                        className="px-3 py-1 rounded-full bg-teal-500/10 text-teal-400 flex items-center gap-2 text-sm"
-                      >
-                        <Award className="w-4 h-4" />
-                        <span>{achievement}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div> */}
-
-                {/* <div className="flex flex-wrap gap-2">
-                  {edu.skills.map((skill, i) => (
-                    <span
-                      key={i}
-                      className="px-2 py-1 text-xs rounded bg-blue-500/10 text-blue-300"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div> */}
+                {/* Description */}
+                {edu.description && (
+                  <p className="text-gray-300 text-sm italic border-l-2 border-teal-500 pl-3">
+                    {edu.description}
+                  </p>
+                )}
               </div>
             </motion.div>
           ))}

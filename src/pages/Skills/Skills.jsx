@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import IconCloudDemo from "@/components/globe";
-import { Code2, Database, Cpu, Layout } from "lucide-react";
+import { Code2, Database, Cpu, Layout, Cloud } from "lucide-react";
 import {
   FaReact,
   FaNodeJs,
@@ -12,6 +12,8 @@ import {
   FaLinux,
   FaAws,
   FaJava,
+  FaGithub,
+  FaSalesforce,
 } from "react-icons/fa";
 import {
   SiNextdotjs,
@@ -87,6 +89,7 @@ const SkillsSection = () => {
         { name: "JavaScript", icon: <SiJavascript className="w-4 h-4 text-[#3178C6]" /> },
         { name: "HTML5", icon: <BsFileEarmarkCode className="w-4 h-4 text-[#E34F26]" /> },
         { name: "CSS3", icon: <BsFileEarmarkCode className="w-4 h-4 text-[#1572B6]" /> },
+        { name: "Tailwind CSS", icon: <SiTailwindcss className="w-4 h-4 text-[#06B6D4]" /> },
       ],
     },
     {
@@ -94,31 +97,37 @@ const SkillsSection = () => {
       title: "Backend Development",
       color: "text-green-400",
       skills: [
+        { name: "Java", icon: <FaJava className="w-4 h-4 text-[#007396]" /> },
         { name: "Spring Boot", icon: <FaJava className="w-4 h-4 text-[#007396]" /> },
         { name: "Node.js", icon: <FaNodeJs className="w-4 h-4 text-[#68A063]" /> },
-        { name: "PostgreSQL", icon: <SiPostgresql className="w-4 h-4 text-[#336791]" /> },
+        { name: "Python", icon: <FaPython className="w-4 h-4 text-[#3776AB]" /> },
         { name: "REST API", icon: <BsFileEarmarkCode className="w-4 h-4 text-[#4F5B93]" /> },
       ],
     },
     {
       icon: Cpu,
-      title: "Machine Learning",
+      title: "AI & Machine Learning",
       color: "text-yellow-400",
       skills: [
         { name: "Python", icon: <FaPython className="w-4 h-4 text-[#306998]" /> },
-        { name: "TensorFlow", icon: <FaGitAlt className="w-4 h-4 text-[#FF6F61]" /> },
         { name: "Scikit-learn", icon: <SiVercel className="w-4 h-4 text-[#000]" /> },
-        { name: "Pandas", icon: <FaPython className="w-4 h-4 text-[#306998]" /> },
+        { name: "Agentic AI", icon: <FaPython className="w-4 h-4 text-[#306998]" /> },
+        { name: "RAG", icon: <FaGitAlt className="w-4 h-4 text-[#FF6F61]" /> },
+        { name: "LLMs", icon: <SiVercel className="w-4 h-4 text-[#000]" /> },
       ],
     },
     {
-      icon: Layout,
-      title: "Cloud & DevOps",
+      icon: FaSalesforce,
+      title: "Salesforce Development",
       color: "text-gray-400",
       skills: [
-        { name: "Docker", icon: <FaDocker className="w-4 h-4 text-[#0db7ed]" /> },
-        { name: "Google Cloud", icon: <FaAws className="w-4 h-4 text-[#232F3E]" /> },
-        { name: "Git", icon: <FaGitAlt className="w-4 h-4 text-[#F14E32]" /> },
+        
+        { name: "Salesforce", icon: <FaSalesforce className="w-4 h-4 text-[#2496ED]" />},
+        { name: "Apex", icon: <FaSalesforce className="w-4 h-4 text-[#2496ED]" /> },
+        { name: "Lightning Web Components",icon: <FaSalesforce className="w-4 h-4 text-[#2496ED]" />,},
+        { name: "SOQL",icon: <FaSalesforce className="w-4 h-4 text-[#2496ED]" />,},
+        { name: "Agentforce",icon: <FaSalesforce className="w-4 h-4 text-[#2496ED]" />},
+        { name: "CRM Analytics",icon: <FaSalesforce className="w-4 h-4 text-[#2496ED]" />},
       ],
     },
     {
@@ -139,10 +148,13 @@ const SkillsSection = () => {
       skills: [
         { name: "IntelliJ IDEA", icon: <TbBrandVscode className="w-4 h-4 text-[#2C3E50]" /> },
         { name: "VSCode", icon: <TbBrandVscode className="w-4 h-4 text-[#0078D4]" /> },
+        { name: "Salesforce", icon: <FaSalesforce className="w-4 h-4 text-[#2496ED]" /> },
         { name: "Postman", icon: <SiPostgresql className="w-4 h-4 text-[#FF6C37]" /> },
-        { name: "Vite", icon: <SiVite className="w-4 h-4 text-[#646CFF]" /> },
-        { name: "Jupyter Notebook", icon: <SiJest className="w-4 h-4 text-[#F5A500]" /> },
+        { name: "Git", icon: <FaGitAlt className="w-4 h-4 text-[#FF6F61]" /> },
+        { name: "GitHub", icon: <FaGithub className="w-4 h-4 text-white" /> },
+        { name: "Jupyter", icon: <SiJest className="w-4 h-4 text-[#F5A500]" /> },
         { name: "Streamlit", icon: <SiVercel className="w-4 h-4 text-[#000]" /> },
+        { name: "Docker", icon: <FaDocker className="w-4 h-4 text-[#2496ED]" /> },
       ],
     },
   ];
